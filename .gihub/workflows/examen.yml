@@ -5,6 +5,7 @@ on:
     branches:
       - molina
   pull_request:
+
 permissions:
   contents: read
   packages: write
@@ -43,7 +44,7 @@ jobs:
     - name: 🏗️ Build and push Docker image
       uses: docker/build-push-action@v6
       with:
-        context:
-        file: ./dockerfile
+        context: .
+        file: ./Dockerfile
         push: true
         tags: ghcr.io/demlema/lema-diego:latest
